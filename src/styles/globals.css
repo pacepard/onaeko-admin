@@ -1,0 +1,259 @@
+@import 'tailwindcss';
+
+@source "../**/*.{ts,tsx}";
+@source "../../node_modules/@onaeko/ui/dist/**/*.{js}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    /* Academy DESIGN.md — paper-calm canvas, orange primary, forest secondary */
+    --onaeko-background: #f6f5f4;
+    --onaeko-foreground: #000000;
+    --onaeko-card: #ffffff;
+    --onaeko-card-foreground: #000000;
+    --onaeko-popover: #ffffff;
+    --onaeko-popover-foreground: #000000;
+    --onaeko-primary: #f36827;
+    --onaeko-primary-foreground: #ffffff;
+    --onaeko-secondary: #2e503f;
+    --onaeko-secondary-foreground: #ffffff;
+    --onaeko-muted: #f6f5f4;
+    --onaeko-muted-foreground: #615d59;
+    --onaeko-accent: #f6f5f4;
+    --onaeko-accent-foreground: #31302e;
+    --onaeko-destructive: #b42318;
+    --onaeko-destructive-foreground: #ffffff;
+    --onaeko-success: #2e503f;
+    --onaeko-border: #e6e6e6;
+    --onaeko-input: #e6e6e6;
+    --onaeko-ring: #f36827;
+    --onaeko-radius: 0.5rem;
+
+    --onaeko-sidebar: #ffffff;
+    --onaeko-sidebar-foreground: #31302e;
+    --onaeko-sidebar-primary: #000000;
+    --onaeko-sidebar-primary-foreground: #ffffff;
+    --onaeko-sidebar-accent: #f6f5f4;
+    --onaeko-sidebar-accent-foreground: #000000;
+    --onaeko-sidebar-border: #e6e6e6;
+    --onaeko-sidebar-ring: #f36827;
+
+    /* Short aliases for Tailwind theme mapping */
+    --background: var(--onaeko-background);
+    --foreground: var(--onaeko-foreground);
+    --card: var(--onaeko-card);
+    --card-foreground: var(--onaeko-card-foreground);
+    --popover: var(--onaeko-popover);
+    --popover-foreground: var(--onaeko-popover-foreground);
+    --primary: var(--onaeko-primary);
+    --primary-foreground: var(--onaeko-primary-foreground);
+    --secondary: var(--onaeko-secondary);
+    --secondary-foreground: var(--onaeko-secondary-foreground);
+    --muted: var(--onaeko-muted);
+    --muted-foreground: var(--onaeko-muted-foreground);
+    --accent: var(--onaeko-accent);
+    --accent-foreground: var(--onaeko-accent-foreground);
+    --destructive: var(--onaeko-destructive);
+    --destructive-foreground: var(--onaeko-destructive-foreground);
+    --success: var(--onaeko-success);
+    --border: var(--onaeko-border);
+    --input: var(--onaeko-input);
+    --ring: var(--onaeko-ring);
+    --radius: var(--onaeko-radius);
+    --sidebar: var(--onaeko-sidebar);
+    --sidebar-foreground: var(--onaeko-sidebar-foreground);
+    --sidebar-primary: var(--onaeko-sidebar-primary);
+    --sidebar-primary-foreground: var(--onaeko-sidebar-primary-foreground);
+    --sidebar-accent: var(--onaeko-sidebar-accent);
+    --sidebar-accent-foreground: var(--onaeko-sidebar-accent-foreground);
+    --sidebar-border: var(--onaeko-sidebar-border);
+    --sidebar-ring: var(--onaeko-sidebar-ring);
+}
+
+.dark {
+    --onaeko-background: oklch(0.18 0.02 240);
+    --onaeko-foreground: oklch(0.96 0.01 220);
+    --onaeko-card: oklch(0.21 0.02 240);
+    --onaeko-card-foreground: oklch(0.96 0.01 220);
+    --onaeko-popover: oklch(0.21 0.02 240);
+    --onaeko-popover-foreground: oklch(0.96 0.01 220);
+    --onaeko-primary: oklch(0.72 0.09 195);
+    --onaeko-primary-foreground: oklch(0.18 0.03 220);
+    --onaeko-secondary: oklch(0.28 0.02 240);
+    --onaeko-secondary-foreground: oklch(0.96 0.01 220);
+    --onaeko-muted: oklch(0.28 0.02 240);
+    --onaeko-muted-foreground: oklch(0.7 0.02 220);
+    --onaeko-accent: oklch(0.3 0.03 200);
+    --onaeko-accent-foreground: oklch(0.96 0.01 200);
+    --onaeko-destructive: oklch(0.6 0.18 25);
+    --onaeko-destructive-foreground: oklch(0.98 0.01 25);
+    --onaeko-success: oklch(0.65 0.12 165);
+    --onaeko-border: oklch(0.32 0.02 240);
+    --onaeko-input: oklch(0.32 0.02 240);
+    --onaeko-ring: oklch(0.65 0.08 195);
+
+    --onaeko-sidebar: oklch(0.2 0.02 240);
+    --onaeko-sidebar-foreground: oklch(0.96 0.01 220);
+    --onaeko-sidebar-primary: oklch(0.72 0.09 195);
+    --onaeko-sidebar-primary-foreground: oklch(0.18 0.03 220);
+    --onaeko-sidebar-accent: oklch(0.28 0.03 200);
+    --onaeko-sidebar-accent-foreground: oklch(0.96 0.01 200);
+    --onaeko-sidebar-border: oklch(0.32 0.02 240);
+    --onaeko-sidebar-ring: oklch(0.65 0.08 195);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans:
+        'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-success: var(--success);
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-xl: 0;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-command-palette-in: command-palette-in 0.2s ease-out;
+    --animate-spin: spin 1s linear infinite;
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+    @keyframes caret-blink {
+        0%,
+        70%,
+        100% {
+            opacity: 1;
+        }
+        20%,
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 100% 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+
+    @keyframes command-palette-in {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -8px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@utility animate-caret-blink {
+    animation: var(--animate-caret-blink);
+}
+
+@utility shimmer {
+    background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        color-mix(in oklab, var(--foreground) 12%, transparent) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+@utility scrollbar-none {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@utility scroll-fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 0.75rem, #000 calc(100% - 0.75rem), transparent);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: var(--font-sans);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        @apply text-muted-foreground;
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        @apply cursor-pointer;
+    }
+
+    button,
+    input,
+    textarea,
+    select,
+    [data-slot='button'],
+    [data-slot='input'] {
+        border-radius: 0;
+    }
+}
