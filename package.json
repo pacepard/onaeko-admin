@@ -1,0 +1,53 @@
+{
+    "name": "@onaeko/admin",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "description": "Onaeko Admin — organisation admin onboarding and workspace",
+    "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": "20.x"
+  },
+    "scripts": {
+        "dev": "vite --port 5403 --strictPort",
+        "build": "tsc -b && vite build",
+        "typecheck": "tsc -b --pretty false",
+        "lint": "oxlint",
+        "preview": "vite preview --port 5403 --strictPort",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "npx --yes tsx --test src/api/paths.test.ts src/utils/admin-payloads.test.ts src/utils/dev-mock.util.test.ts"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^5.7.1",
+        "@onaeko/ui": "^0.3.0",
+        "axios": "^1.11.0",
+        "jquery": "^4.0.0",
+        "lucide-react": "^0.539.0",
+        "moment": "^2.30.1",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "react-error-boundary": "^6.1.3",
+        "react-hook-form": "^7.85.0",
+        "react-is": "^19.2.8",
+        "react-router": "^7.18.2",
+        "react-router-dom": "^7.18.2",
+        "universal-cookie": "^8.0.1",
+        "uuid": "^14.0.2",
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.1.11",
+        "@types/jquery": "^4.0.1",
+        "@types/node": "^24.13.3",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@types/uuid": "^11.0.0",
+        "@vitejs/plugin-react-swc": "^3.11.0",
+        "oxlint": "^1.75.0",
+        "prettier": "^3.6.2",
+        "tailwindcss": "^4.1.11",
+        "typescript": "~5.9.2",
+        "vite": "^7.0.6"
+    }
+}
