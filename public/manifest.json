@@ -1,0 +1,17 @@
+{
+  "name": "Onaeko Admin",
+  "short_name": "Onaeko Admin",
+  "description": "Onaeko Admin — organisation workspace",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F56C23",
+  "icons": [
+    {
+      "src": "/blocks/onaeko-icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
